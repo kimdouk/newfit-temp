@@ -1,16 +1,14 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import Ionic from 'react-native-vector-icons/Ionicons';
 
-import FoodRegInputFood from './FoodRegInputFood';
-import FoodRegInputQuantity from './FoodRegInputQuantity';
-import FoodRegInputNutrition from './FoodRegInputNutrition';
 import FoodRegFoodList from './FoodRegFoodList';
 import FoodRegFoodListDetail from './FoodRegFoodListDetail';
-import Home from './Home';
-import Calendar from './Calendar';
-import Ranking from './Ranking';
+import FoodRegInputFood from './FoodRegInputFood';
+import FoodRegInputNutrition from './FoodRegInputNutrition';
+import FoodRegInputQuantity from './FoodRegInputQuantity';
+import Graph from './Graph';
 import Mypage from './Mypage';
 import SmallScreen from './SmallScreen';
 
@@ -54,13 +52,10 @@ export default function MainApp() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={Home} options={{tabBarLabel : '홈'}}/>
-      <Tab.Screen name="Calendar" component={Calendar} options={{tabBarLabel : '달력'}}/>
-      <Tab.Screen name="Ranking" component={Ranking} options={{tabBarLabel : '랭킹'}}/>
+      <Tab.Screen name="Home" component={HomeStackScreen} options={{tabBarLabel : '홈'}}/>
+      <Tab.Screen name="Calendar" component={Graph} options={{tabBarLabel : '달력'}}/>
+      <Tab.Screen name="Ranking" component={SmallScreen} options={{tabBarLabel : '랭킹'}}/>
       <Tab.Screen name="Mypage" component={Mypage} options={{tabBarLabel : '마이'}}/>
-      {/* HomeStackScreen */}
-      {/* Mypage */}
-      {/* SmallScreen */}
     </Tab.Navigator>
   );
 }

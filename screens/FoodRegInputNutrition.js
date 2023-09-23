@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import NutritionTextInput from '../components/NutritionTextInput';
 const FoodRegInputNutrition = ({ navigation, route }) => {
@@ -107,10 +106,6 @@ const styles = StyleSheet.create({
   backButton: {
     marginBottom: 20,
   },
-  // label: {
-  //   fontSize: 18,
-  //   marginBottom: 10,
-  // },
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
@@ -135,4 +130,3 @@ const styles = StyleSheet.create({
 });
 
 export default FoodRegInputNutrition;
-

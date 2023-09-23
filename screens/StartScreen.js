@@ -1,21 +1,16 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image,Linking, } from 'react-native'
-import React from 'react'
-import textLogo from '../assets/text_logo.png'
-import imageLogo from '../assets/image_logo.png'
-import LoginButton from '../components/LoginButton'
-import axios from 'axios'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
-
-
-
+import React from 'react'
+import { Image, Linking, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import imageLogo from '../assets/image_logo.png'
+import textLogo from '../assets/text_logo.png'
+import LoginButton from '../components/LoginButton'
 
 const StartScreen = () => {
   const onSubmit = async () => {
     try {
       // const response = await axios.get('http://13.125.241.115:8080/oauth2/authorization/kakao');
       // console.log(response)
-      // // Linking.openURL()를 사용하여 URL을 엽니다.
       const url = 'http://13.125.241.115:8080/oauth2/authorization/kakao'
       const canOpen = await Linking.canOpenURL(url);
       
@@ -29,21 +24,6 @@ const StartScreen = () => {
       console.log(error);
     }
   };
-    // const onSubmit = () => {
-
-      
-    //   // const axios = require('axios');
-    //   axios.get('http://13.125.241.115:8080/oauth2/authorization/kakao')
-
-    //   .then(function(response){
-
-    //     console.log(response);
-    //   })
-    //   .catch(function(error){
-    //     console.log(error);
-    //   })
-        
-    // };
 
     return (
         <SafeAreaProvider>
@@ -73,8 +53,6 @@ const StartScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor:'pink',
-        // paddingBottom: insets.bottom
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -84,7 +62,6 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       textAlign: 'center',
       paddingVertical:3
-    //   marginBottom: 20,
     },
     mainTextView:{
         marginVertical:10
@@ -106,34 +83,24 @@ const styles = StyleSheet.create({
       textAlign: 'center',
     },
     ment:{
-        // backgroundColor:'red',
     },
     imgLogo:{
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        // backgroundColor:'red',
         height: 340
       },
     info:{
         marginTop:25,
         position: 'absolute',
-        // backgroundColor:'blue',
         top:0
     },
     textLogo:{
         marginTop:60,
         marginVertical:20,
         alignSelf:'center'
-        // backgroundColor:'red',
-        // marginLeft:1000
-        
-        
-        // textAlign:'center'
-        
     },
   });
 
 
 export default StartScreen
-

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, StyleSheet, View,Text } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const NutritionTextInput = ({ label, value, onChangeText, placeholder }) => {
   return (

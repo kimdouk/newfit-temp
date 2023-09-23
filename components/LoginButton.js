@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import kakaotalkLogo from '../assets/kakaotalk_logo.png'
-import { TouchableOpacity, Text, StyleSheet, Image, Animated } from 'react-native';
+import { Animated, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import kakaotalkLogo from '../assets/kakaotalk_logo.png';
 
 const LoginButton = ({ onSubmit }) => {
   const fade = useRef(new Animated.Value(0)).current
@@ -17,10 +17,9 @@ const LoginButton = ({ onSubmit }) => {
   }, [fade])
 
   return (
-    <Animated.View                 // Special animatable View
+    <Animated.View 
       style={{
-        // ...styles.button,
-        opacity: fade,         // Bind opacity to animated value
+        opacity: fade,
       }}
     >
       <TouchableOpacity style={styles.button}onPress={onSubmit}>
@@ -39,12 +38,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 100,
     borderRadius: 50,
   },
-//   button: {
-    // backgroundColor: 'black',
-    // paddingVertical: 20,
-    // paddingHorizontal: 100,
-    // borderRadius: 50,
-//   },
   buttonText: {
     marginHorizontal:10,
     color: 'white',
